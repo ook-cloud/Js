@@ -342,7 +342,6 @@ if (L + M <= K || L + K <= M || M + K <= L) {
 //   0 -> "12 AM", 12 -> "12 PM", 1–11 -> "AM", 13–23 -> subtract 12 and add "PM".
 // Test with 0, 9, 12, 18.
 let hour = 18;
-
 if (hour === 0) {
   console.log("12 AM");
 } else if (hour === 12) {
@@ -453,10 +452,12 @@ if (isSoldOut) {
 // ----- 1. How long is the word? -----
 // word (string). Log word.length. if longer than 5 -> "Long word", else "Short word".
 // Test "sun" and "elephant".
-let word = "sun";
-console.log(word.length, word.length > 5 ? "Long word" : "Short word");
-word = "elephant";
-console.log(word.length, word.length > 5 ? "Long word" : "Short word");
+let word = "sunnys";
+if (word.length > 5) {
+  console.log("Long word");
+} else {
+  console.log("Short word");
+}
 
 // ----- 2. Loud and quiet -----
 // name (string). Log it with .toUpperCase() and with .toLowerCase().
@@ -479,9 +480,11 @@ console.log(wOrd.slice(4));
 // email (string). if email.includes("@") -> "Looks like an email", else "Not an email".
 // Test "sam@mail.com" and "sam.com".
 let email = "sam@mail.com";
-console.log(email.includes("@") ? "Looks like an email" : "Not an email");
-email = "sam.com";
-console.log(email.includes("@") ? "Looks like an email" : "Not an email");
+if (email.includes("@")) {
+  console.log("Looks like an email");
+} else {
+  console.log("Not an email");
+}
 
 // ----- 6. Full name builder -----
 // firstName, lastName (strings). Join with a space using + into fullName.
@@ -496,11 +499,11 @@ console.log(fullName.length);
 // username (string). Valid only when length >= 3 AND <= 15.
 // Log "Valid username" or "Invalid username".
 let Username = "alex123";
-console.log(
-  Username.length >= 3 && Username.length <= 15
-    ? "Valid Username"
-    : "Invalid Username",
-);
+if (Username.length >= 3 && Username.length <= 15) {
+  console.log("Valid Username");
+} else {
+  console.log("Invalid Username");
+}
 
 // ----- 8. Same word? (ignore case) -----
 // a, b (strings). if a.toLowerCase() === b.toLowerCase() -> "Match", else "No match".
@@ -512,7 +515,7 @@ console.log(a.toLowerCase() === b.toLowerCase() ? "Match" : "No match");
 
 // ----- 9. Clean the spaces (trim) -----
 // raw = "   hi there   ". clean = raw.trim(). Log clean and clean.length. Compare to raw.length.
-let raw = "   hi there   ";
+let raw = " hi there ";
 let clean = raw.trim();
 
 console.log(clean);
@@ -522,51 +525,116 @@ console.log(raw.length);
 // ----- 10. Find a letter (indexOf) -----
 // word (string). word.indexOf("a"). if -1 -> "No letter a", else "Found a at position " + ...
 // Test "banana" and "sky".
+let worD = "banana";
+let pos = worD.indexOf("a");
+console.log(pos === -1 ? "No letter a" : "Found a at position " + pos);
 
 // ----- 11. Phone area code -----
 // phone (10-char string like "5551234567"). Log "Area code: " + phone.slice(0, 3).
 // if phone.length is not exactly 10 -> "Invalid number".
+let phone = "5551234567";
+if (phone.length !== 10) {
+  console.log("Invalid number");
+} else {
+  console.log("Area code: " + phone.slice(0, 3));
+}
+
 // ----- 12. Password rule (length + word) -----
 // password (string). "Strong" only when length >= 8 AND NOT contains "password"
 // (!password.toLowerCase().includes("password")). Otherwise "Weak".
+let passWord = "mypassword123";
+if (passWord.length >= 8 && !password.toLowerCase().includes("password")) {
+  console.log("Strong");
+} else {
+  console.log("Weak");
+}
+
 // ----- 13. Initials -----
 // firstName, lastName (strings). first letters uppercase, join with + and dots -> "M.J.".
 // "maria" + "jones" -> "M.J.".
+let frstName = "otgon";
+let lstName = "baatar";
+let initials = frstName[0].toUpperCase() + "." + lstName[0].toUpperCase() + ".";
+console.log(initials);
+
 // ----- 14. Capitalize a name -----
 // name = "maria". Join name[0].toUpperCase() with name.slice(1) -> "Maria".
+let ner = "otgonbaatar";
+let capitalized = ner[0].toUpperCase() + ner.slice(1);
+console.log(capitalized);
+
 // ----- 15. Tiny palindrome check -----
 // word (3-letter string like "mom"). Reverse with word[2]+word[1]+word[0], compare with ===.
 // Log "Palindrome" or "Not a palindrome". Test "mom" and "cat".
 // --- Interview round: Numbers <-> Strings ---
+let woRd = "mom";
+let reversed = woRd[2] + woRd[1] + woRd[0];
+console.log(reversed === word ? "Palindrome" : "Not a palindrome");
+
 // ----- 16. Count the digits -----
 // n (number). String(n).length. if more than 3 digits -> "Big number", else "Small number".
 // Test 42 and 10000.
+let O = 42;
+console.log(String(n).length > 3 ? "Big number" : "Small number");
+O = 10000;
+console.log(String(n).length > 3 ? "Big number" : "Small number");
+
 // ----- 17. Sum the two digits -----
 // n (2-digit number like 47). s = String(n). Number(s[0]) + Number(s[1]). Log the sum.
 // if sum is exactly 10 -> "Round". Test 47 and 55.
+let k = 47;
+let s = String(k);
+let sum = Number(s[0]) + Number(s[1]);
+
+console.log(sum);
+if (sum === 10) console.log("Round");
+
 // ----- 18. First and last digit -----
 // n (3-digit number). s = String(n). Log Number(s[0]) and Number(s[s.length - 1]).
 // if equal -> "Same ends". Test 363 and 481.
+let g = 363;
+let f = String(g);
+
+let first = Number(f[0]);
+let last = Number(f[f.length - 1]);
+console.log(first, last);
+if (first === last) console.log("Same ends");
+
 // ----- 19. Reverse a 3-digit number -----
 // n (3-digit number). s = String(n). reversed = Number(s[2] + s[1] + s[0]). Log it.
 // Test 123 -> 321.
+let h = 123;
+let j = String(h);
+let Reversed = Number(j[2] + j[1] + j[0]);
+console.log(Reversed);
+
 // ----- 20. Palindrome number -----
 // n (3-digit number). Build reversed like #19, compare to n with ===.
 // Log "Palindrome" or "Not a palindrome". Test 121 and 123.
+let l = 121;
+let q = String(l);
+let reVersed = Number(q[2] + q[1] + q[0]);
+console.log(reVersed === l ? "Palindrome" : "Not a palindrome");
+
 // ----- 21. Contains a lucky 7? -----
 // n (number). if String(n).includes("7") -> "Lucky!", else "No luck". Test 1700 and 2024.
+
 // ----- 22. Glue two numbers -----
 // a = 12, b = 34. Number(String(a) + String(b)) -> 1234. Log it, then log typeof the result.
+
 // ----- 23. Pad the clock -----
 // minute (0–59). if String(minute).length === 1 add "0" in front. Log like "05" or "42".
 // Test 5 and 42.
+
 // ----- 24. Cents to price tag -----
 // cents (3+ digit number like 150). s = String(cents).
 // rest = s.slice(s.length - 2); dollars = s.slice(0, s.length - 2).
 // Log "$" + dollars + "." + rest -> "$1.50". Test 150 and 905.
+
 // ----- 25. Is this string a number? -----
 // input (string like "42" or "hello"). if isNaN(Number(input)) -> "Invalid input";
 // otherwise turn it into a number, double it, log the result. Test "21" and "abc".
+
 /* ============================================================
    End of workbook. Nice work!
    ============================================================ */
