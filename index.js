@@ -708,8 +708,7 @@ for (i = 1; i <= maxCount; i++) {
 // ----- 2. Count down -----
 // Log `startNum` down to 0, then log "Liftoff!" after the loop ends.
 let startNum = 10;
-for (i = startNum; i >= 0; i--) 
-  console.log(i);
+for (i = startNum; i >= 0; i--) console.log(i);
 // TEST 1:  startNum = 10  ->  10 9 8 7 6 5 4 3 2 1 0  then  Liftoff!
 // TEST 2:  startNum = 3   ->  3 2 1 0  then  Liftoff!
 // TEST 3:  startNum = 0   ->  0  then  Liftoff!
@@ -739,7 +738,7 @@ console.log(maxTotal);
 // Log the `tableN` times table from "tableN x 1" to "tableN x 10", like "7 x 3 = 21".
 let tableN = 7;
 for (let i = 1; i <= 10; i++) {
-  console.log(tableN + " x " + i + " = " + (tableN * i));
+  console.log(tableN + " x " + i + " = " + tableN * i);
 }
 // TEST 1:  tableN = 7  ->  7 x 1 = 7  ...  7 x 10 = 70
 // TEST 2:  tableN = 2  ->  2 x 1 = 2  ...  2 x 10 = 20
@@ -747,8 +746,8 @@ for (let i = 1; i <= 10; i++) {
 
 // ----- 6. Factorial -----
 // Multiply 1*2*...*`factN` with an accumulator starting at 1. Log the result.
-let factN = 5; 
-let accumulator = 1; 
+let factN = 5;
+let accumulator = 1;
 for (i = 1; i <= factN; i++) {
   accumulator = accumulator * i;
 }
@@ -761,7 +760,7 @@ console.log(accumulator);
 // ----- 7. Count multiples -----
 // Count how many numbers from 1 to `multMax` are divisible by 3 (i % 3 === 0). Log the count.
 let multMax = 50;
-let count = 0; 
+let count = 0;
 for (let i = 1; i <= multMax; i++) {
   if (i % 3 === 0) {
     count = count + 1;
@@ -799,8 +798,8 @@ for (let i = 1; i <= fizzMax; i++) {
 // While halveN > 1, log halveN then halve it: halveN = Math.floor(halveN / 2).
 let halveN = 100;
 while (halveN > 1) {
-console.log(halveN);
-halveN = Math.floor(halveN / 2);
+  console.log(halveN);
+  halveN = Math.floor(halveN / 2);
 }
 
 // TEST 1:  halveN = 100  ->  50 25 12 6 3 1
@@ -812,13 +811,13 @@ halveN = Math.floor(halveN / 2);
 let digitN = 7384;
 let digitCount = 0;
 if (digitN === 0) {
-digitCount = 1;
+  digitCount = 1;
 } else {
-let tempDigitN = digitN;
-while (tempDigitN > 0) {
-digitCount = digitCount + 1;
-tempDigitN = Math.floor(tempDigitN / 10);
-}
+  let tempDigitN = digitN;
+  while (tempDigitN > 0) {
+    digitCount = digitCount + 1;
+    tempDigitN = Math.floor(tempDigitN / 10);
+  }
 }
 console.log(digitCount);
 
@@ -832,8 +831,8 @@ let sumDigitN = 1234;
 let totalSum = 0;
 let tempSumDigitN = sumDigitN;
 while (tempSumDigitN > 0) {
-totalSum = totalSum + (tempSumDigitN % 10);
-tempSumDigitN = Math.floor(tempSumDigitN / 10);
+  totalSum = totalSum + (tempSumDigitN % 10);
+  tempSumDigitN = Math.floor(tempSumDigitN / 10);
 }
 console.log(totalSum);
 
@@ -847,8 +846,8 @@ console.log(totalSum);
 let secretNum = 4;
 let guessNum = 1;
 while (guessNum !== secretNum) {
-console.log("Trying " + guessNum);
-guessNum++;
+  console.log("Trying " + guessNum);
+  guessNum++;
 }
 console.log("Found it: " + secretNum);
 
@@ -864,7 +863,7 @@ PART C — LOOPING OVER STRINGS
 // Loop with spellWord[i] and log one letter per line.
 let spellWord = "hello";
 for (let i = 0; i < spellWord.length; i++) {
-console.log(spellWord[i]);
+  console.log(spellWord[i]);
 }
 
 // TEST 1:  spellWord = "hello"  ->  h e l l o
@@ -876,9 +875,9 @@ console.log(spellWord[i]);
 let letterWord = "banana";
 let letterCount = 0;
 for (let i = 0; i < letterWord.length; i++) {
-if (letterWord[i] === "a") {
-letterCount = letterCount + 1;
-}
+  if (letterWord[i] === "a") {
+    letterCount = letterCount + 1;
+  }
 }
 console.log(letterCount);
 
@@ -891,9 +890,9 @@ console.log(letterCount);
 let vowelText = "javascript";
 let vowelCount = 0;
 for (let i = 0; i < vowelText.length; i++) {
-if ("aeiou".includes(vowelText[i])) {
-vowelCount = vowelCount + 1;
-}
+  if ("aeiou".includes(vowelText[i])) {
+    vowelCount = vowelCount + 1;
+  }
 }
 console.log(vowelCount);
 
@@ -906,7 +905,7 @@ console.log(vowelCount);
 let reverseWord = "code";
 let reversedText = "";
 for (let i = 0; i < reverseWord.length; i++) {
-reversedText = reverseWord[i] + reversedText;
+  reversedText = reverseWord[i] + reversedText;
 }
 console.log(reversedText);
 
@@ -919,9 +918,9 @@ console.log(reversedText);
 let wordSentence = "the cat sat down";
 let wordCount = 1;
 for (let i = 0; i < wordSentence.length; i++) {
-if (wordSentence[i] === " ") {
-wordCount = wordCount + 1;
-}
+  if (wordSentence[i] === " ") {
+    wordCount = wordCount + 1;
+  }
 }
 console.log(wordCount);
 
@@ -939,14 +938,14 @@ PART D — COMBINE IT
 let digitText = "abc4def";
 let foundDigit = false;
 for (let i = 0; i < digitText.length; i++) {
-if (digitText[i] !== " " && !isNaN(Number(digitText[i]))) {
-console.log("First digit: " + digitText[i]);
-foundDigit = true;
-break;
-}
+  if (digitText[i] !== " " && !isNaN(Number(digitText[i]))) {
+    console.log("First digit: " + digitText[i]);
+    foundDigit = true;
+    break;
+  }
 }
 if (!foundDigit) {
-console.log("No digits");
+  console.log("No digits");
 }
 
 // TEST 1:  digitText = "abc4def"  ->  First digit: 4
@@ -958,19 +957,19 @@ console.log("No digits");
 let primeN = 13;
 let isPrime = true;
 if (primeN < 2) {
-isPrime = false;
+  isPrime = false;
 } else {
-for (let i = 2; i < primeN; i++) {
-if (primeN % i === 0) {
-isPrime = false;
-break;
-}
-}
+  for (let i = 2; i < primeN; i++) {
+    if (primeN % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
 }
 if (isPrime) {
-console.log("Prime");
+  console.log("Prime");
 } else {
-console.log("Not prime");
+  console.log("Not prime");
 }
 
 // TEST 1:  primeN = 13  ->  Prime
@@ -982,9 +981,9 @@ console.log("Not prime");
 let gridRows = 3;
 let gridCols = 3;
 for (let row = 1; row <= gridRows; row++) {
-for (let col = 1; col <= gridCols; col++) {
-console.log(row + " x " + col + " = " + (row * col));
-}
+  for (let col = 1; col <= gridCols; col++) {
+    console.log(row + " x " + col + " = " + row * col);
+  }
 }
 
 // TEST 1:  gridRows = 3, gridCols = 3  ->  9 lines, last is  3 x 3 = 9
@@ -1004,16 +1003,16 @@ input, compute, and log the answer.
 // Hint: rebuild the number reversed with % 10 and Math.floor(/10), compare.
 let palinNum = 121;
 if (palinNum < 0) {
-console.log(false);
+  console.log(false);
 } else {
-let original = palinNum;
-let reversed = 0;
-while (original > 0) {
-let remainder = original % 10;
-reversed = reversed * 10 + remainder;
-original = Math.floor(original / 10);
-}
-console.log(palinNum === reversed);
+  let original = palinNum;
+  let reversed = 0;
+  while (original > 0) {
+    let remainder = original % 10;
+    reversed = reversed * 10 + remainder;
+    original = Math.floor(original / 10);
+  }
+  console.log(palinNum === reversed);
 }
 
 // EXAMPLE 1:  Input: palinNum = 121    Output: true
@@ -1030,14 +1029,14 @@ let revNum = 123;
 let sign = 1;
 let tempRevNum = revNum;
 if (tempRevNum < 0) {
-sign = -1;
-tempRevNum = tempRevNum * -1;
+  sign = -1;
+  tempRevNum = tempRevNum * -1;
 }
 let revResult = 0;
 while (tempRevNum > 0) {
-let remainder = tempRevNum % 10;
-revResult = revResult * 10 + remainder;
-tempRevNum = Math.floor(tempRevNum / 10);
+  let remainder = tempRevNum % 10;
+  revResult = revResult * 10 + remainder;
+  tempRevNum = Math.floor(tempRevNum / 10);
 }
 console.log(revResult * sign);
 
@@ -1055,12 +1054,12 @@ console.log(revResult * sign);
 let rootNum = 38;
 let currentRootNum = rootNum;
 while (currentRootNum >= 10) {
-let sum = 0;
-while (currentRootNum > 0) {
-sum = sum + (currentRootNum % 10);
-currentRootNum = Math.floor(currentRootNum / 10);
-}
-currentRootNum = sum;
+  let sum = 0;
+  while (currentRootNum > 0) {
+    sum = sum + (currentRootNum % 10);
+    currentRootNum = Math.floor(currentRootNum / 10);
+  }
+  currentRootNum = sum;
 }
 console.log(currentRootNum);
 
@@ -1079,14 +1078,14 @@ console.log(currentRootNum);
 let happyNum = 19;
 let currentHappy = happyNum;
 while (currentHappy !== 1 && currentHappy !== 4) {
-let sum = 0;
-let temp = currentHappy;
-while (temp > 0) {
-let digit = temp % 10;
-sum = sum + (digit * digit);
-temp = Math.floor(temp / 10);
-}
-currentHappy = sum;
+  let sum = 0;
+  let temp = currentHappy;
+  while (temp > 0) {
+    let digit = temp % 10;
+    sum = sum + digit * digit;
+    temp = Math.floor(temp / 10);
+  }
+  currentHappy = sum;
 }
 console.log(currentHappy === 1);
 
@@ -1104,8 +1103,8 @@ let bitsNum = 11;
 let bitCount = 0;
 let tempBitsNum = bitsNum;
 while (tempBitsNum > 0) {
-bitCount = bitCount + (tempBitsNum % 2);
-tempBitsNum = Math.floor(tempBitsNum / 2);
+  bitCount = bitCount + (tempBitsNum % 2);
+  tempBitsNum = Math.floor(tempBitsNum / 2);
 }
 console.log(bitCount);
 
@@ -1122,12 +1121,12 @@ console.log(bitCount);
 let powNum = 27;
 let tempPowNum = powNum;
 if (tempPowNum <= 0) {
-console.log(false);
+  console.log(false);
 } else {
-while (tempPowNum % 3 === 0) {
-tempPowNum = Math.floor(tempPowNum / 3);
-}
-console.log(tempPowNum === 1);
+  while (tempPowNum % 3 === 0) {
+    tempPowNum = Math.floor(tempPowNum / 3);
+  }
+  console.log(tempPowNum === 1);
 }
 
 // EXAMPLE 1:  Input: powNum = 27   Output: true
@@ -1145,11 +1144,11 @@ let lastWordStr = "Hello World";
 let lastWordLength = 0;
 let index = lastWordStr.length - 1;
 while (index >= 0 && lastWordStr[index] === " ") {
-index--;
+  index--;
 }
 while (index >= 0 && lastWordStr[index] !== " ") {
-lastWordLength++;
-index--;
+  lastWordLength++;
+  index--;
 }
 console.log(lastWordLength);
 
@@ -1168,12 +1167,12 @@ let left = 0;
 let right = palinStr.length - 1;
 let isValidPalin = true;
 while (left < right) {
-if (palinStr[left] !== palinStr[right]) {
-isValidPalin = false;
-break;
-}
-left++;
-right--;
+  if (palinStr[left] !== palinStr[right]) {
+    isValidPalin = false;
+    break;
+  }
+  left++;
+  right--;
 }
 console.log(isValidPalin);
 
@@ -1189,16 +1188,16 @@ console.log(isValidPalin);
 // distinct ways to reach the top. (It is the Fibonacci pattern.)
 let stairsNum = 5;
 if (stairsNum <= 1) {
-console.log(1);
+  console.log(1);
 } else {
-let prev2 = 1;
-let prev1 = 2;
-for (let i = 3; i <= stairsNum; i++) {
-let current = prev1 + prev2;
-prev2 = prev1;
-prev1 = current;
-}
-console.log(prev1);
+  let prev2 = 1;
+  let prev1 = 2;
+  for (let i = 3; i <= stairsNum; i++) {
+    let current = prev1 + prev2;
+    prev2 = prev1;
+    prev1 = current;
+  }
+  console.log(prev1);
 }
 
 // EXAMPLE 1:  Input: stairsNum = 2   Output: 2
@@ -1214,7 +1213,7 @@ console.log(prev1);
 let sqrtNum = 8;
 let sqrtResult = 0;
 while ((sqrtResult + 1) * (sqrtResult + 1) <= sqrtNum) {
-sqrtResult++;
+  sqrtResult++;
 }
 console.log(sqrtResult);
 
@@ -1233,7 +1232,7 @@ let excelStr = "AB";
 let excelResult = 0;
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 for (let i = 0; i < excelStr.length; i++) {
-excelResult = excelResult * 26 + (alphabet.indexOf(excelStr[i]) + 1);
+  excelResult = excelResult * 26 + (alphabet.indexOf(excelStr[i]) + 1);
 }
 console.log(excelResult);
 
@@ -1251,18 +1250,18 @@ console.log(excelResult);
 let uglyNum = 6;
 let tempUgly = uglyNum;
 if (tempUgly <= 0) {
-console.log(false);
+  console.log(false);
 } else {
-while (tempUgly % 2 === 0) {
-tempUgly = Math.floor(tempUgly / 2);
-}
-while (tempUgly % 3 === 0) {
-tempUgly = Math.floor(tempUgly / 3);
-}
-while (tempUgly % 5 === 0) {
-tempUgly = Math.floor(tempUgly / 5);
-}
-console.log(tempUgly === 1);
+  while (tempUgly % 2 === 0) {
+    tempUgly = Math.floor(tempUgly / 2);
+  }
+  while (tempUgly % 3 === 0) {
+    tempUgly = Math.floor(tempUgly / 3);
+  }
+  while (tempUgly % 5 === 0) {
+    tempUgly = Math.floor(tempUgly / 5);
+  }
+  console.log(tempUgly === 1);
 }
 
 // EXAMPLE 1:  Input: uglyNum = 6    Output: true
@@ -1280,8 +1279,8 @@ let zeroN = 5;
 let trailingZeroes = 0;
 let tempZeroN = zeroN;
 while (tempZeroN >= 5) {
-tempZeroN = Math.floor(tempZeroN / 5);
-trailingZeroes = trailingZeroes + tempZeroN;
+  tempZeroN = Math.floor(tempZeroN / 5);
+  trailingZeroes = trailingZeroes + tempZeroN;
 }
 console.log(trailingZeroes);
 
@@ -1299,12 +1298,12 @@ let stepsNum = 14;
 let stepsCount = 0;
 let tempStepsNum = stepsNum;
 while (tempStepsNum > 0) {
-if (tempStepsNum % 2 === 0) {
-tempStepsNum = tempStepsNum / 2;
-} else {
-tempStepsNum = tempStepsNum - 1;
-}
-stepsCount = stepsCount + 1;
+  if (tempStepsNum % 2 === 0) {
+    tempStepsNum = tempStepsNum / 2;
+  } else {
+    tempStepsNum = tempStepsNum - 1;
+  }
+  stepsCount = stepsCount + 1;
 }
 console.log(stepsCount);
 
@@ -1318,20 +1317,21 @@ console.log(stepsCount);
 // ----- E15. Subtract Product and Sum of Digits  (LeetCode 1281) -----
 // Given prodSumN, compute (product of its digits) - (sum of its digits) and log it.
 // Hint: product starts at 1, sum starts at 0; peel digits with % 10 and Math.floor(/10).
+
 let prodSumN = 234;
 let digitProduct = 1;
 let digitSum = 0;
 let tempProdSumN = prodSumN;
 if (tempProdSumN === 0) {
-digitProduct = 0;
-digitSum = 0;
+  digitProduct = 0;
+  digitSum = 0;
 } else {
-while (tempProdSumN > 0) {
-let digit = tempProdSumN % 10;
-digitProduct = digitProduct * digit;
-digitSum = digitSum + digit;
-tempProdSumN = Math.floor(tempProdSumN / 10);
-}
+  while (tempProdSumN > 0) {
+    let digit = tempProdSumN % 10;
+    digitProduct = digitProduct * digit;
+    digitSum = digitSum + digit;
+    tempProdSumN = Math.floor(tempProdSumN / 10);
+  }
 }
 console.log(digitProduct - digitSum);
 
@@ -1348,21 +1348,22 @@ CHALLENGE (optional) — Star triangle (nested loops)
 
 // ----- Star triangle -----
 // Loop row 1..starRows. Build a line of "" with an inner loop, then log the line.
+
 let starRows = 5;
 for (let row = 1; row <= starRows; row++) {
-let line = "";
-for (let col = 1; col <= row; col++) {
-line = line + "";
-}
-console.log(line);
+  let line = "";
+  for (let col = 1; col <= row; col++) {
+    line = line + "";
+  }
+  console.log(line);
 }
 
 // TEST 1:  starRows = 5  ->  *
-//                            
+//
 //                            ***
 //                            ****
 //                            *****
 // TEST 2:  starRows = 3  ->  *
-//                            
+//
 //                            ***
 // TEST 3:  starRows = 1  ->  *
